@@ -1,9 +1,17 @@
 import readlinesync = require("readline-sync");
 import { colors } from './src/util/Colors';
+import { Conta } from './src/Model/Conta';  
 
 export function main() {
 
     let opcao: number;
+
+    const conta: Conta = new Conta(1, 123, 1, "Josenil", 10000);
+    conta.visualizar();
+    conta.sacar(10500);
+    conta.visualizar();
+    conta.depositar(5000);
+    conta.visualizar();
 
     while (true) {
 
@@ -25,11 +33,11 @@ export function main() {
         console.log("            9 - Sair                                 ");
         console.log("                                                     ");
         console.log("*****************************************************");
-        console.log("                                                     ", 
-        colors.reset);
-
-        console.log("Entre com a opção desejada: ");
+        console.log("                                                     ");
+        console.log("Entre com a opção desejada:");
         opcao = readlinesync.questionInt("");
+
+        console.log(colors.reset);
         
         if (opcao == 9) {
             console.log(colors.fg.greenstrong, 
