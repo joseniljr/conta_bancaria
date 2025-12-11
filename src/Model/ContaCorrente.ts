@@ -13,11 +13,12 @@ export class ContaCorrente extends Conta {
          public get limite() {
             return this._limite
          }
-
+         
          public set limite(limite: number) {
             this._limite = limite
          }
-
+         
+         //Polimorfismo
          public sacar(valor: number): boolean {
 
             if ((this.saldo + this.limite) < valor) {
@@ -31,7 +32,7 @@ export class ContaCorrente extends Conta {
 
          public visualizar(): void {
              super.visualizar()
-             console.log("Limite: " + this._limite.toFixed(2))
+             console.log("Limite da conta: " + this._limite.toFixed(2))
          }
          
 }
